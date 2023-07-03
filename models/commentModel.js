@@ -14,11 +14,15 @@ export const commentModel = sequelize.define("comentario", {
     },
     id_pelicula: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
+    },
+    nombre_pelicula: {
+      type: DataTypes.STRING,
+      allowNull: true,
     },
     fecha: {
       type: DataTypes.DATE,
-      defaultValue: sequelize.literal('CURRENT_TIMESTAMP'),
+      defaultValue: sequelize.literal("DATEONLY(CURRENT_TIMESTAMP)"),
     },
     state: {
       type: DataTypes.BOOLEAN,
